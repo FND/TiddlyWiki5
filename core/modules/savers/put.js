@@ -49,6 +49,7 @@ PutSaver.prototype.save = function(text, method, callback) {
 	if (!this.serverAcceptsPuts) {
 		return false;
 	}
+	var self = this;
 	var headers = { "Content-Type", "text/html;charset=UTF-8" };
 	if (this.etag) {
 		headers["If-Match"] = this.etag;
